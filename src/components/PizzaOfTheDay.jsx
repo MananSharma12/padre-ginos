@@ -23,6 +23,11 @@ const PizzaOfTheDay = () => {
             From: {intl.format(pizzaOfTheDay.sizes.S)}
           </p>
         </div>
+        <img
+          className="pizza-of-the-day-image"
+          src={pizzaOfTheDay.image}
+          alt={pizzaOfTheDay.name}
+        />
       </div>
     </div>
   );
