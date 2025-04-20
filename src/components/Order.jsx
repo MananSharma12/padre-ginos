@@ -1,6 +1,7 @@
-import {useEffect, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import Pizza from "./Pizza.jsx";
 import Cart from "./Cart.jsx";
+import {CartContext} from "../contexts.js";
 
 const intl = new Intl.NumberFormat("en-IN", {
   style: "currency", currency: "INR",
@@ -10,7 +11,7 @@ const Order = () => {
   const [pizzaTypes, setPizzaTypes] = useState([])
   const [pizzaType, setPizzaType] = useState("pepperoni")
   const [pizzaSize, setPizzaSize] = useState("M")
-  const [cart, setCart] = useState([])
+  const [cart, setCart] = useContext(CartContext);
   const [loading, setLoading] = useState(true)
 
   async function checkout() {
@@ -55,7 +56,6 @@ const Order = () => {
         <h2>Create Order</h2>
         <form onSubmit={(e) => {
           e.preventDefault();
-          console.log(selectedPizza);
           setCart([...cart, {pizza: selectedPizza, size: pizzaSize}])
         }}>
           <div>
