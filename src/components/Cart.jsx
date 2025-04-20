@@ -1,5 +1,5 @@
 const intl = new Intl.NumberFormat("en-IN", {
-  style: "currency", currency: "INR",
+  style: "currency", currency: "USD",
 })
 
 const Cart = ({ cart, checkout }) => {
