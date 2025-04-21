@@ -29,7 +29,7 @@ function ContactRoute() {
       {mutation.isSuccess ? (
         <h3>Submitted</h3>
       ): (
-        <form onSubmit={mutation.mutate}>
+        <form onSubmit={() => mutation.mutate(e)}>
           <input name="name" placeholder="Name" required />
           <input name="email" placeholder="Email" type="email" required />
           <textarea name="message" placeholder="Message" required />
