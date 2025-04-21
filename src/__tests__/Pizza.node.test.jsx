@@ -6,7 +6,7 @@ afterEach(cleanup);
 
 test("Alt text renders on Pizza Image", () => {
   const name = "My Pizza"
-  const src = "https://picsum.com/200"
+  const src = "https://picsum.photos/200"
   const screen = render(
     <Pizza name={name} image={src} description="My description" />
   )

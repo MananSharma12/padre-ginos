@@ -51,14 +51,15 @@ const Order = () => {
     return <h1>Loading...</h1>
   }
 
+  function addToCart(e) {
+    setCart([...cart, { pizza: selectedPizza, size: pizzaSize }])
+  }
+
   return (
     <div className="order-page">
       <div className="order">
         <h2>Create Order</h2>
-        <form onSubmit={(e) => {
-          e.preventDefault();
-          setCart([...cart, {pizza: selectedPizza, size: pizzaSize}])
-        }}>
+        <form action={addToCart}>
           <div>
             <div>
               <label htmlFor="pizza-type">Pizza Type</label>
